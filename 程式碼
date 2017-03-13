@@ -1,0 +1,18 @@
+Const byte LED = 13;
+Char val;
+
+Void setup(){
+Serial.begin(9600);
+Serial.println(“Hello,”);
+Void loop(){
+If(Serial.available() ){
+Val = serial. Read();
+If(val ==’1’){
+digitalWrite(LED, HIGH);
+serial.print(“LED ON”);
+}else if (val == ‘0’){
+digitalWrite(LED, LOW);
+Serial.print(“LED OFF”);
+}
+}
+}
