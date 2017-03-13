@@ -1,0 +1,24 @@
+const int analogInPin = A0; 
+const int analogInPin2 = A1;
+
+
+void setup() { 
+Serial.begin(9600);
+
+} 
+
+void loop() 
+{ 
+float sensorValue = 0; 
+float sensorVoltage = 0; 
+
+for(int i=1 ; i<6;i++ ) 
+{ 
+sensorValue = analogRead(analogInPin); 
+sensorValue = 0.7* sensorValue + 0.3* analogRead(analogInPin2); 
+sensorVoltage = (sensorValue * 5) /1024; 
+}
+Serial.println(sensorVoltage); 
+ delay(1000); 
+ 
+}
